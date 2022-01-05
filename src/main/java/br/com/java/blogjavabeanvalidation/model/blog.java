@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-public class blog {
-    
+public class Blog {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -20,10 +20,10 @@ public class blog {
     @Email(message = "Email deve ser válido")
     private String blogEmail;
 
-    public blog() {
+    public Blog() {
     }
-
-    public blog(long id,
+    
+    public Blog(long id,
             @NotNull @Size(min = 2, message = "O título do blog deve ter pelo menos 2 caracteres") String blogTitulo,
             @NotBlank(message = "O editor do blog não pode ficar em branco") String blogEditor,
             @Email(message = "Email deve ser válido") String blogEmail) {
@@ -65,3 +65,4 @@ public class blog {
         this.blogEmail = blogEmail;
     }
 }
+
